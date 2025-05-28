@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-style: italic;
+        }
+
+        p {
+            color: blue !important;
+            font-size: 20px;
+            background-color: #ffffff00;
+        }
+        
+        #p {
+            color: red;
+            font-size: 40px;
+        }
+        
+        .p {
+            color: green;
+            font-size: 30px;
+        }
+
+        div > h1 > .naver {
+            color: #a52a2a;
+        }
+
+        .naver {
+            color: #008000;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="color: red; font-size: 40px;">제목</h1>
+    <div>내용1</div>
+    <p>내용2-1</p>
+    <p id="p">내용2-2</p>
+    <p class="p">내용2-3</p>
+    <p id="p" class="p">내용2-4</p>
+    <p>
+        <span>
+            내용2-5
+        </span>
+    </p>
+    <span>내용3</span>
+
+    <div>
+        <h1>
+            <a class="naver" href="">네이버</a>
+        </h1>
+    </div>
+</body>
+</html>
