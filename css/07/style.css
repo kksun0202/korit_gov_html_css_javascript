@@ -1,0 +1,136 @@
+html {
+    font-size: 62.5%;
+    background-color: #fafafa;
+}
+
+div > h1 + p {
+    color: red;
+}
+
+.buttons {
+    & > div {
+        box-sizing: border-box;
+        border: 0.1rem solid #dbdbdb;
+        border-radius: 0.4rem;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fafafa;
+        }
+
+        &:active {
+            background-color: #eee;
+        }
+    }
+
+    & > a {
+        box-sizing: border-box; 
+        border: 0.1rem solid #dbdbdb;
+        border-radius: 0.4rem;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer;
+        color: #222;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #fafafa;
+        }
+
+        &:active {
+            background-color: #eee;
+        }
+    }
+
+    & > button {
+        box-sizing: border-box; 
+        border: 0.1rem solid #dbdbdb;
+        border-radius: 0.4rem;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer;
+        color: #222;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #fafafa;
+        }
+
+        &:active {
+            background-color: #eee;
+        }
+
+        &:disabled {
+            background-color: red;
+            cursor: default;
+        }
+    }
+}
+
+#button2:target {
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+}
+
+.check > input[type=checkbox] + label {
+    color: blue;
+}
+
+.check > input[type=checkbox]:checked + label {
+    color: red
+}
+
+.check > input[type=radio] + label {
+    color: red;
+}
+
+.check > input[type=radio]:checked + label {
+    color: blue
+}
+
+.not > input:not(#text2) {
+    background-color: green;
+}
+
+.menu-list {
+    
+    & > li {
+        position: relative;
+        border: 0.1rem solid #dbdbdb;
+        width: fit-content;
+        cursor: pointer;
+
+        & > div {
+            display: none;
+        }
+
+        &:active > div {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -22rem;
+            background-color: yellow;
+            width: 20rem;
+        }
+    }
+}
+
+.menu-list2 li:nth-of-type(2n-1){
+    color: brown;
+}
+
+.menu-list2 > li::before {
+    content: "menu ";
+    border: 0.1rem solid #dbdbdb;
+    color: pink;
+}
+
+.menu-list2 > li::after {
+    content: " ->";
+}
