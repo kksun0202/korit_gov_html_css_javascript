@@ -1,5 +1,4 @@
 let studentInputValues = {
-    id: 0,
     name: "",
     age: "",
     address: "",
@@ -12,23 +11,28 @@ function handleRegisterOnkeyup(e) {
     }
 }
 
-const handleRegisterOnclick = (e) => {
-    studentInputValues["id"] = 1;
+async function registerStudentRequest() {
+    try {
+        const requestURL = "http://localhost:8080/api/js/students";
+        const requestBody = JSON.stringify(studentInputValues);
+        const response = await fetch(requestURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: requestBody,
+        });
+        const responseJson = await response.json();
 
-    let lastStudent = null;
-    if (studentList.length > 0 ) {
-       lastStudent = studentList[studentList.length - 1];
-       studentInputValues["id"] = lastStudent.id + 1;
+        console.log(responseJson);
+    } catch {
+        console.error(error);
     }
-    
-    studentList = [...studentList, studentInputValues];
-    studentInputValues = {
-        id: 0,
-        name: "",
-        age: "",
-        address: "",
-    }
-    console.log(studentList);
+}
+
+const handleRegisterOnclick = (e) => {
+    registerStudentRequest();
+
     loadStudentList();
 }
 
